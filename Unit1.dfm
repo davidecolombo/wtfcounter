@@ -1,8 +1,11 @@
 object Form1: TForm1
   Left = 0
   Top = 0
+  HorzScrollBar.Visible = False
+  VertScrollBar.Visible = False
   BorderIcons = [biSystemMenu, biMinimize]
-  Caption = 'WTF counter'
+  BorderStyle = bsSingle
+  Caption = 'WTF Counter'
   ClientHeight = 240
   ClientWidth = 320
   Color = clBtnFace
@@ -16,12 +19,18 @@ object Form1: TForm1
   OnDestroy = FormDestroy
   TextHeight = 15
   object Image1: TImage
+    AlignWithMargins = True
     Left = 0
-    Top = 41
+    Top = 33
     Width = 320
-    Height = 167
+    Height = 172
+    Margins.Left = 0
+    Margins.Top = 8
+    Margins.Right = 0
+    Margins.Bottom = 0
     Align = alClient
     Center = True
+    Enabled = False
     ParentShowHint = False
     Picture.Data = {
       0954506E67496D61676589504E470D0A1A0A0000000D49484452000002800000
@@ -4521,42 +4530,53 @@ object Form1: TForm1
   end
   object CounterLabel: TLabel
     Left = 0
-    Top = 208
+    Top = 205
     Width = 320
-    Height = 32
+    Height = 35
     Align = alBottom
     Alignment = taCenter
-    Caption = 'CounterLabel'
+    Caption = 'Counter = 0'
+    Constraints.MinHeight = 35
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clRed
     Font.Height = -24
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
-    ExplicitWidth = 142
+    Layout = tlCenter
+    ExplicitTop = 215
   end
   object Panel1: TPanel
     Left = 0
     Top = 0
     Width = 320
-    Height = 41
+    Height = 25
+    Margins.Left = 0
+    Margins.Top = 0
+    Margins.Right = 0
+    Margins.Bottom = 0
     Align = alTop
     BevelOuter = bvNone
+    Constraints.MinHeight = 25
     TabOrder = 0
-    ExplicitWidth = 316
     object CheckBox1: TCheckBox
-      Left = 8
-      Top = 12
-      Width = 25
-      Height = 17
+      Left = 264
+      Top = 0
+      Width = 56
+      Height = 25
+      Align = alRight
+      BiDiMode = bdRightToLeftNoAlign
+      Caption = 'Edit'
+      ParentBiDiMode = False
       TabOrder = 0
       OnClick = CheckBox1Click
     end
     object HotKey1: THotKey
-      Left = 31
-      Top = 10
-      Width = 282
+      Left = 0
+      Top = 0
+      Width = 258
       Height = 23
+      AutoSize = False
       Enabled = False
       HotKey = 49239
       Modifiers = [hkCtrl, hkAlt]

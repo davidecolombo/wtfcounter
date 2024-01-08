@@ -24,6 +24,7 @@ type
     Registered: Boolean;
     procedure WMHotKey(var Msg: TWMHotKey); message WM_HOTKEY;
     procedure UpdateCounterLabel;
+    procedure UpdateGUI;
   public
     { Public declarations }
   end;
@@ -46,6 +47,21 @@ end;
 procedure TForm1.UpdateCounterLabel;
 begin
   CounterLabel.Caption := 'Counter = ' + IntToStr(Counter);
+end;
+
+procedure TForm1.UpdateGUI;
+const
+  SIZE = 95;
+var
+  Width, Height: Integer;
+begin
+  Panel1.Height := Form1.Height * 10 div 100;
+  Width := Panel1.Width - CheckBox1.Width;
+  Height := Panel1.Height;
+  HotKey1.Width := Width * SIZE div 100;
+  HotKey1.Height := Height * SIZE div 100;
+  HotKey1.Left := (Width - HotKey1.Width) div 2;
+  HotKey1.Top := (Height - HotKey1.Height) div 2;
 end;
 
 procedure TForm1.HotKey1Change(Sender: TObject);
@@ -83,6 +99,7 @@ begin
   Registered := False;
   HotKey1Change(Self);
   UpdateCounterLabel;
+  UpdateGUI;
 end;
 
 procedure TForm1.FormDestroy(Sender: TObject);
