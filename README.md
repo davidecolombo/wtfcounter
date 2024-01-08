@@ -1,6 +1,6 @@
 # WTF Counter
 
-![WTF Counter](https://ik.imagekit.io/davidecolombo/wtfcounter_7_jDHNWuPY.png?updatedAt=1704741445345)
+![WTF Counter](https://ik.imagekit.io/davidecolombo/wtfcounter_UPs8K2BAc.png?updatedAt=1704748874568)
 
 ## Overview
 
